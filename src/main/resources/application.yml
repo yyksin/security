@@ -1,0 +1,38 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /
+    encoding:
+      charset: UTF-8
+      enabled: true
+      force: true
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/security?serverTimezone=Asia/Seoul
+    username: yyk
+    password: 7777
+
+  jpa:
+    hibernate:
+      ddl-auto: update
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    show-sql: true
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            client-id: 539460460007-mmc9jtf7cu5ush1ic4faqri03n6r8hbs.apps.googleusercontent.com
+            client-secret: KqKqKMt3pSBgt1qJsYUhTR_o
+            scope:
+              - email
+              - profile
+          facebook:
+            client-id: 248360513065901
+            client-secret: b20001f8089d20fefdd913abb852e1bf
+            scope:
+              - email
+              - public_profile
